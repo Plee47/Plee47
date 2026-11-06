@@ -30,7 +30,7 @@ I started in programming and now focus on **data science**. I hold an MBA in Dat
 
 Lê qualquer livro de regras de RPG e entrega o resumo do sistema, fichas válidas e análises de encontro, explicando de onde veio cada número.
 
-<a href="https://oraculo-do-mestre.streamlit.app/"><img src="assets/oraculo-demo-dnd.gif" width="100%" alt="Demonstração do site Oráculo do Mestre: na tela inicial, o clique em Testar com D&amp;D 5e abre o resumo do sistema; depois, na ficha rápida, subir do nível 1 ao 5 leva os pontos de vida de 11 para 39 e a proficiência de +2 para +3."></a>
+<a href="https://oraculo-do-mestre.streamlit.app/"><img src="assets/oraculo-transicao-dnd.gif" width="100%" alt="Demonstração do site Oráculo do Mestre: na tela inicial, o clique em Testar com D&amp;D 5e abre uma cortina com o selo de um d20, que revela o resumo do sistema; depois, na ficha rápida, subir do nível 1 ao 5 leva os pontos de vida de 11 para 39 e a proficiência de +2 para +3."></a>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/oraculo-escuro.svg">
