@@ -30,7 +30,7 @@ I come from software development and now focus on **data science**, while taking
 
 Lê qualquer livro de regras de RPG e entrega o resumo do sistema, fichas válidas e análises de encontro, explicando de onde veio cada número.
 
-<a href="https://oraculo-do-mestre.streamlit.app/"><img src="https://raw.githubusercontent.com/Plee47/oraculo-do-mestre/main/docs/imagens/inicio.png?v=grimorio" width="100%" alt="Tela inicial do site Oráculo do Mestre, com o envio do livro e o pipeline de dados no Databricks"></a>
+<a href="https://oraculo-do-mestre.streamlit.app/"><img src="assets/oraculo-site-grimorio.png" width="100%" alt="Tela inicial do site Oráculo do Mestre, com o envio do livro e o pipeline de dados no Databricks"></a>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/oraculo-escuro.svg">
