@@ -1,0 +1,82 @@
+{
+  "usuario": "Plee47",
+  "nome": "Pedro Ostroski",
+  "titulo": "Ciência de dados e engenharia de machine learning",
+  "info": [
+    ["foco", "modelagem, avaliação de modelos e MLOps"],
+    ["formação", "Desenvolvimento de Sistemas"],
+    ["em curso", "Pós-Tech em Machine Learning Engineering (FIAP)"],
+    ["stack", "Python, scikit-learn, PyTorch, Spark, MLflow"],
+    ["destaque", "oraculo-do-mestre (F1 = 0,957)"]
+  ],
+  "oraculo": [
+    ["0,957", ["F1 do detector de RPG,", "em livros nunca vistos"]],
+    ["12 de 12", ["livros certos, incluindo", "fantasia e xadrez"]],
+    ["98% e 99%", ["dos campos de magias e", "monstros certos com LLM"]],
+    ["285", ["testes automatizados", "rodando no CI"]]
+  ],
+  "projetos": [
+    {
+      "nome": "oraculo-do-mestre",
+      "repo": "oraculo-do-mestre",
+      "tarefa": "Ler livros de regras",
+      "metrica": "F1 (detector)",
+      "valor": "0,957",
+      "autoria": "solo"
+    },
+    {
+      "nome": "triagem-de-laudos",
+      "repo": "TC3-Triagem-de-Laudos-Medicos-com-FastAPI-Docker-Airflow-Prometheus-Grafana-e-ONNX",
+      "tarefa": "Classificar urgência",
+      "metrica": "recall urgente",
+      "valor": "0,858",
+      "autoria": "equipe"
+    },
+    {
+      "nome": "previsao-de-churn",
+      "repo": "TC1-Rede-Neural-para-Previsao-de-Churn-com-Pipeline-Profissional-End-to-End",
+      "tarefa": "Prever cancelamento",
+      "metrica": "recall",
+      "valor": "0,832",
+      "autoria": "equipe"
+    },
+    {
+      "nome": "propensao-de-compra",
+      "repo": "TC2-Pipeline-de-ML-para-Propensao-de-Compra-com-Docker-DVC-e-MLflow",
+      "tarefa": "Prever compra",
+      "metrica": "PR-AUC",
+      "valor": "0,684",
+      "autoria": "equipe"
+    },
+    {
+      "nome": "portfolio-textil",
+      "repo": "OtimizacaoDePortfolioPorClusterizacaoNaoSupervisionada",
+      "tarefa": "Segmentar produtos",
+      "metrica": "K-Means, PCA",
+      "valor": "–",
+      "autoria": "solo"
+    }
+  ],
+  "ferramentas": [
+    {
+      "etapa": "ANÁLISE",
+      "itens": [["Python", true], ["Pandas", true], ["NumPy", true], ["SQL", true]]
+    },
+    {
+      "etapa": "MODELOS",
+      "itens": [["scikit-learn", true], ["PyTorch", true], ["LLMs", true], ["MLflow", true]]
+    },
+    {
+      "etapa": "DADOS",
+      "itens": [["Spark", true], ["Databricks", true], ["Delta Lake", true], ["Unity Catalog", true], ["DVC", false]]
+    },
+    {
+      "etapa": "ENTREGA",
+      "itens": [["FastAPI", true], ["Docker", true], ["Streamlit", true], ["AWS ECS", false], ["ONNX Runtime", false]]
+    },
+    {
+      "etapa": "OPERAÇÃO",
+      "itens": [["GitHub Actions", true], ["pytest", true], ["Airflow", false], ["Prometheus", false], ["Grafana", false]]
+    }
+  ]
+}
