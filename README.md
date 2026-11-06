@@ -19,7 +19,7 @@ I started in programming and now focus on **data science**. I hold an MBA in Dat
 
 | Project | Task | Key metric | Authorship |
 |---|---|---|---|
-| [Medical report triage](https://github.com/Plee47/TC3-Triagem-de-Laudos-Medicos-com-FastAPI-Docker-Airflow-Prometheus-Grafana-e-ONNX) | Text classification by urgency | Urgent recall 0.858 | Team (my part: architecture decision and initial Docker API) |
+| [Medical report triage](https://github.com/Plee47/TC3-Triagem-de-Laudos-Medicos-com-FastAPI-Docker-Airflow-Prometheus-Grafana-e-ONNX) | Text classification by urgency | Urgent recall 0.858 | Team |
 | [Churn prediction](https://github.com/Plee47/TC1-Rede-Neural-para-Previsao-de-Churn-com-Pipeline-Profissional-End-to-End) | Telecom churn with PyTorch | Recall 0.832 | Team |
 | [Purchase propensity](https://github.com/Plee47/TC2-Pipeline-de-ML-para-Propensao-de-Compra-com-Docker-DVC-e-MLflow) | E-commerce sessions | PR-AUC 0.684 | Team |
 | [Textile portfolio clustering](https://github.com/Plee47/OtimizacaoDePortfolioPorClusterizacaoNaoSupervisionada) | Product segmentation | K-Means, PCA | Solo |
@@ -53,7 +53,7 @@ Lê qualquer livro de regras de RPG e entrega o resumo do sistema, fichas válid
 </picture>
 
 - **[Oráculo do Mestre](https://github.com/Plee47/oraculo-do-mestre):** F1 de 0,957 no detector de livros.
-- **[Triagem de laudos médicos](https://github.com/Plee47/TC3-Triagem-de-Laudos-Medicos-com-FastAPI-Docker-Airflow-Prometheus-Grafana-e-ONNX):** recall de 0,858 em "urgente". Em equipe; minha parte foi a decisão arquitetural e a API inicial em Docker.
+- **[Triagem de laudos médicos](https://github.com/Plee47/TC3-Triagem-de-Laudos-Medicos-com-FastAPI-Docker-Airflow-Prometheus-Grafana-e-ONNX):** recall de 0,858 em "urgente". Em equipe.
 - **[Previsão de churn](https://github.com/Plee47/TC1-Rede-Neural-para-Previsao-de-Churn-com-Pipeline-Profissional-End-to-End):** rede neural em PyTorch com recall de 0,832, modelo escolhido pelo custo do erro. Em equipe.
 - **[Propensão de compra](https://github.com/Plee47/TC2-Pipeline-de-ML-para-Propensao-de-Compra-com-Docker-DVC-e-MLflow):** PR-AUC de 0,684, 4,4x acima da linha de base. Em equipe.
 - **[Portfólio têxtil](https://github.com/Plee47/OtimizacaoDePortfolioPorClusterizacaoNaoSupervisionada):** segmentação de malhas sintéticas com K-Means, Elbow, Silhouette e PCA.
