@@ -30,7 +30,7 @@ I come from software development and now focus on **data science**, while taking
 
 Lê qualquer livro de regras de RPG e entrega o resumo do sistema, fichas válidas e análises de encontro, explicando de onde veio cada número.
 
-<a href="https://oraculo-do-mestre.streamlit.app/"><img src="https://raw.githubusercontent.com/Plee47/oraculo-do-mestre/main/docs/imagens/inicio.png" width="100%" alt="Tela inicial do site Oráculo do Mestre, com o envio do livro e o pipeline de dados no Databricks"></a>
+<a href="https://oraculo-do-mestre.streamlit.app/"><img src="https://raw.githubusercontent.com/Plee47/oraculo-do-mestre/main/docs/imagens/inicio.png?v=grimorio" width="100%" alt="Tela inicial do site Oráculo do Mestre, com o envio do livro e o pipeline de dados no Databricks"></a>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/oraculo-escuro.svg">
@@ -58,18 +58,4 @@ Lê qualquer livro de regras de RPG e entrega o resumo do sistema, fichas válid
 - **[Propensão de compra](https://github.com/Plee47/TC2-Pipeline-de-ML-para-Propensao-de-Compra-com-Docker-DVC-e-MLflow):** PR-AUC de 0,684, 4,4x acima da linha de base. Em equipe.
 - **[Portfólio têxtil](https://github.com/Plee47/OtimizacaoDePortfolioPorClusterizacaoNaoSupervisionada):** segmentação de malhas sintéticas com K-Means, Elbow, Silhouette e PCA.
 
-## Linguagens e ferramentas
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/linguagens-escuro.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/linguagens-claro.svg">
-  <img src="assets/linguagens-claro.svg" width="100%" alt="Gráfico de barras com o número de repositórios públicos que usam cada linguagem. Python e Jupyter Notebook lideram.">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/ferramentas-escuro.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/ferramentas-claro.svg">
-  <img src="assets/ferramentas-claro.svg" width="100%" alt="Uso direto: Python, Pandas, NumPy, SQL, scikit-learn, PyTorch, LLMs, MLflow, Spark, Databricks, Delta Lake, Unity Catalog, FastAPI, Docker, Streamlit, GitHub Actions e pytest. Em projeto de equipe: DVC, AWS ECS, ONNX Runtime, Airflow, Prometheus e Grafana.">
-</picture>
-
-<sub>Status do CI, linguagens e contagem de projetos atualizados automaticamente pelo GitHub Actions.</sub>
+<sub>Status do CI e contagem de projetos atualizados automaticamente pelo GitHub Actions.</sub>

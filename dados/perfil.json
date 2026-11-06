@@ -3,17 +3,56 @@
   "nome": "Pedro Ostroski",
   "titulo": "Ciência de dados e engenharia de machine learning",
   "info": [
-    ["foco", "modelagem, avaliação de modelos e MLOps"],
-    ["formação", "Desenvolvimento de Sistemas"],
-    ["em curso", "Pós-Tech em Machine Learning Engineering (FIAP)"],
-    ["stack", "Python, scikit-learn, PyTorch, Spark, MLflow"],
-    ["destaque", "oraculo-do-mestre (F1 = 0,957)"]
+    [
+      "foco",
+      "modelagem, avaliação de modelos e MLOps"
+    ],
+    [
+      "formação",
+      "Desenvolvimento de Sistemas"
+    ],
+    [
+      "em curso",
+      "Pós-Tech em Machine Learning Engineering (FIAP)"
+    ],
+    [
+      "stack",
+      "Python, scikit-learn, PyTorch, Spark, MLflow"
+    ],
+    [
+      "destaque",
+      "oraculo-do-mestre (F1 = 0,957)"
+    ]
   ],
   "oraculo": [
-    ["0,957", ["F1 do detector de RPG,", "em livros nunca vistos"]],
-    ["12 de 12", ["livros certos, incluindo", "fantasia e xadrez"]],
-    ["98% e 99%", ["dos campos de magias e", "monstros certos com LLM"]],
-    ["285", ["testes automatizados", "rodando no CI"]]
+    [
+      "0,957",
+      [
+        "F1 do detector de RPG,",
+        "em livros nunca vistos"
+      ]
+    ],
+    [
+      "12 de 12",
+      [
+        "livros certos, incluindo",
+        "fantasia e xadrez"
+      ]
+    ],
+    [
+      "98% e 99%",
+      [
+        "dos campos de magias e",
+        "monstros certos com LLM"
+      ]
+    ],
+    [
+      "285",
+      [
+        "testes automatizados",
+        "rodando no CI"
+      ]
+    ]
   ],
   "projetos": [
     {
@@ -55,28 +94,6 @@
       "metrica": "K-Means, PCA",
       "valor": "–",
       "autoria": "solo"
-    }
-  ],
-  "ferramentas": [
-    {
-      "etapa": "ANÁLISE",
-      "itens": [["Python", true], ["Pandas", true], ["NumPy", true], ["SQL", true]]
-    },
-    {
-      "etapa": "MODELOS",
-      "itens": [["scikit-learn", true], ["PyTorch", true], ["LLMs", true], ["MLflow", true]]
-    },
-    {
-      "etapa": "DADOS",
-      "itens": [["Spark", true], ["Databricks", true], ["Delta Lake", true], ["Unity Catalog", true], ["DVC", false]]
-    },
-    {
-      "etapa": "ENTREGA",
-      "itens": [["FastAPI", true], ["Docker", true], ["Streamlit", true], ["AWS ECS", false], ["ONNX Runtime", false]]
-    },
-    {
-      "etapa": "OPERAÇÃO",
-      "itens": [["GitHub Actions", true], ["pytest", true], ["Airflow", false], ["Prometheus", false], ["Grafana", false]]
     }
   ]
 }

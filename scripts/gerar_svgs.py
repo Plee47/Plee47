@@ -1,7 +1,7 @@
 """Gera as imagens do perfil em assets/, nos temas claro e escuro.
 
 Os fatos ficam em dados/perfil.json. Da API pública do GitHub vêm a contagem de
-repositórios, a data da última atividade, as linguagens e o status do CI. Sem
+repositórios, a data da última atividade e o status do CI. Sem
 mudança nos dados, os arquivos saem idênticos e o robô não cria commit.
 
 O texto vira curva vetorial, então o SVG fica igual em qualquer sistema.
@@ -17,7 +17,6 @@ import json
 import os
 import urllib.error
 import urllib.request
-from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
@@ -251,69 +250,6 @@ def placar(fontes: dict, cores: dict, perfil: dict, vivos: dict) -> str:
     return t.fim()
 
 
-def linguagens(fontes: dict, cores: dict, perfil: dict, vivos: dict) -> str:
-    dados = vivos["linguagens"][:6]
-    alt = "Repositórios públicos que usam cada linguagem. " + ", ".join(f"{n}: {q}" for n, q in dados)
-    altura_linha = 34
-    y0 = 18 + 38 + 28
-    altura = y0 + 28 + altura_linha * len(dados) + 18
-    t = Tela(fontes, cores, altura, alt)
-    t.entrada(
-        4,
-        [("repos", "texto"), (".", "suave"), ("linguagens", "texto"), (".", "suave"), ("value_counts", "entrada"), ("()", "suave"), (".", "suave"), ("plot", "texto"), (".", "suave"), ("barh", "entrada"), ("()", "suave")],
-        18,
-    )
-    t.saida(4, y0 + 8)
-    t.texto("inter", f"Em quantos dos {vivos['n_repos']} repositórios públicos cada linguagem aparece", X_CELULA + 14, y0 + 8, 15, "texto")
-    x_barra = X_CELULA + 180
-    larg_max = X_FIM - x_barra - 50
-    maior = max(q for _, q in dados)
-    for i, (nome, q) in enumerate(dados):
-        y = y0 + 28 + altura_linha * i
-        t.texto("inter", nome, x_barra - 14, y + 19, 14.5, "suave", "f")
-        w = larg_max * q / maior
-        # Base reta no eixo, ponta arredondada de 4px.
-        t.add(
-            f'<path d="M{x_barra} {y + 5}h{w - 4:.1f}a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H{x_barra}z" fill="{cores["destaque"]}"/>'
-        )
-        t.texto("mono_bold", str(q), x_barra + w + 10, y + 19, 14.5, "texto")
-    t.add(f'<line x1="{x_barra}" y1="{y0 + 26}" x2="{x_barra}" y2="{y0 + 28 + altura_linha * len(dados)}" stroke="{cores["suave"]}"/>')
-    return t.fim()
-
-
-def ferramentas(fontes: dict, cores: dict, perfil: dict, vivos: dict) -> str:
-    etapas = perfil["ferramentas"]
-    diretas = "; ".join(f"{e['etapa']}: " + ", ".join(n for n, d in e["itens"] if d) for e in etapas)
-    equipe = ", ".join(n for e in etapas for n, d in e["itens"] if not d)
-    alt = f"Ferramentas de uso direto. {diretas}. Em projeto de equipe: {equipe}."
-    linhas = max(len(e["itens"]) for e in etapas)
-    y0 = 18 + 38 + 34
-    altura = y0 + 34 + linhas * 32 + 58
-    t = Tela(fontes, cores, altura, alt)
-    t.entrada(5, [("pedro", "texto"), (".", "suave"), ("ferramentas", "texto"), ("[", "suave"), ('"por_etapa"', "texto_codigo"), ("]", "suave")], 18)
-    t.saida(5, y0)
-    col = (X_FIM - X_CELULA - 10) / 5
-    c = cores
-    for i, e in enumerate(etapas):
-        x = X_CELULA + 10 + col * i
-        t.texto("mono_bold", e["etapa"], x, y0, 13.5, "destaque")
-        t.add(f'<line x1="{x:.1f}" y1="{y0 + 12}" x2="{x + col - 22:.1f}" y2="{y0 + 12}" stroke="{c["borda"]}"/>')
-        for k, (nome, direto) in enumerate(e["itens"]):
-            y = y0 + 42 + k * 32
-            if direto:
-                t.add(f'<circle cx="{x + 4:.1f}" cy="{y - 5}" r="4" fill="{c["texto"]}"/>')
-            else:
-                t.add(f'<circle cx="{x + 4:.1f}" cy="{y - 5}" r="3.4" fill="none" stroke="{c["suave"]}" stroke-width="1.4"/>')
-            t.texto("inter", nome, x + 16, y, 15, "texto" if direto else "suave")
-    yl = altura - 24
-    x = X_CELULA + 10
-    t.add(f'<circle cx="{x + 4}" cy="{yl - 5}" r="4" fill="{c["texto"]}"/>')
-    fim = t.texto("inter", "uso direto", x + 16, yl, 14, "suave")
-    t.add(f'<circle cx="{fim + 26:.1f}" cy="{yl - 5}" r="3.4" fill="none" stroke="{c["suave"]}" stroke-width="1.4"/>')
-    t.texto("inter", "em projeto de equipe", fim + 38, yl, 14, "suave")
-    return t.fim()
-
-
 def api(caminho: str):
     req = urllib.request.Request(f"https://api.github.com/{caminho}")
     req.add_header("Accept", "application/vnd.github+json")
@@ -343,14 +279,10 @@ def coletar(perfil: dict) -> dict:
     # Rota pública: repositório privado nunca entra nas contas nem nas imagens.
     repos = api(f"users/{usuario}/repos?per_page=100&type=owner")
     repos = [r for r in repos if not r["fork"] and r["name"].lower() != usuario.lower()]
-    contagem = Counter()
-    for r in repos:
-        contagem.update(api(f"repos/{usuario}/{r['name']}/languages").keys())
     ultima = max(datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00")) for r in repos)
     return {
         "n_repos": len(repos),
         "ultima": ultima.strftime("%d/%m/%Y"),
-        "linguagens": sorted(contagem.items(), key=lambda kv: (-kv[1], kv[0])),
         "ci": {p["repo"]: estado_ci(usuario, p["repo"]) for p in perfil["projetos"]},
     }
 
@@ -369,7 +301,7 @@ def main() -> None:
     saida = RAIZ / "assets"
     saida.mkdir(exist_ok=True)
     for tema, cores in TEMAS.items():
-        for nome, gerar in (("hero", hero), ("oraculo", oraculo), ("placar", placar), ("linguagens", linguagens), ("ferramentas", ferramentas)):
+        for nome, gerar in (("hero", hero), ("oraculo", oraculo), ("placar", placar)):
             (saida / f"{nome}-{tema}.svg").write_text(gerar(fontes, cores, perfil, vivos), encoding="utf-8", newline="\n")
 
 
