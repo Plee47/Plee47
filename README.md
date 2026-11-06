@@ -1,10 +1,10 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-escuro.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-claro.svg">
-  <img src="assets/hero-claro.svg" width="100%" alt="Pedro Ostroski, ciência de dados e engenharia de machine learning. Foco em modelagem, avaliação de modelos e MLOps. Formação em Desenvolvimento de Sistemas e Pós-Tech em Machine Learning Engineering na FIAP, em curso.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-escuro.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-claro.svg?v=2">
+  <img src="assets/hero-claro.svg?v=2" width="100%" alt="Pedro Ostroski, ciência de dados e engenharia de machine learning. Formação: MBA em Data Science e Analytics (USP/Esalq); Banco de Dados: Data Science, Big Data e BI (UniSociesc); Programação de Computadores (SENAI/SC). Em curso: pós-graduação em Machine Learning Engineering (FIAP).">
 </picture>
 
-Vim do desenvolvimento de sistemas e hoje foco em **ciência de dados**. Gosto de projetos que saem do notebook: modelos avaliados sem vazamento, testes, CI e deploy.
+Comecei na programação e hoje foco em **ciência de dados**. Gosto de projetos que saem do notebook: modelos avaliados sem vazamento, testes, CI e deploy.
 
 [LinkedIn](https://www.linkedin.com/in/pedro-henrique-ostroski/) · [Site do Oráculo do Mestre](https://oraculo-do-mestre.streamlit.app/)
 
@@ -13,7 +13,7 @@ Vim do desenvolvimento de sistemas e hoje foco em **ciência de dados**. Gosto d
 
 <br>
 
-I come from software development and now focus on **data science**, while taking a postgraduate program in Machine Learning Engineering at FIAP (Brazil). I like projects that make it out of the notebook: leakage-free evaluation, tests, CI and deployment.
+I started in programming and now focus on **data science**. I hold an MBA in Data Science and Analytics from USP/Esalq and I'm taking a postgraduate program in Machine Learning Engineering at FIAP (Brazil). I like projects that make it out of the notebook: leakage-free evaluation, tests, CI and deployment.
 
 **Featured project: [Oráculo do Mestre](https://github.com/Plee47/oraculo-do-mestre)** ([live site](https://oraculo-do-mestre.streamlit.app/), in Portuguese) reads any tabletop RPG rulebook and returns a system summary, valid character sheets and encounter analysis, explaining where each number came from. It combines a medallion pipeline on Databricks, a classifier evaluated with leave-one-book-out (F1 0.957), and LLMs benchmarked against a ground truth.
 
@@ -58,4 +58,4 @@ Lê qualquer livro de regras de RPG e entrega o resumo do sistema, fichas válid
 - **[Propensão de compra](https://github.com/Plee47/TC2-Pipeline-de-ML-para-Propensao-de-Compra-com-Docker-DVC-e-MLflow):** PR-AUC de 0,684, 4,4x acima da linha de base. Em equipe.
 - **[Portfólio têxtil](https://github.com/Plee47/OtimizacaoDePortfolioPorClusterizacaoNaoSupervisionada):** segmentação de malhas sintéticas com K-Means, Elbow, Silhouette e PCA.
 
-<sub>Status do CI e contagem de projetos atualizados automaticamente pelo GitHub Actions.</sub>
+<sub>Status do CI atualizado automaticamente pelo GitHub Actions.</sub>

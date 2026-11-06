@@ -5,23 +5,23 @@
   "info": [
     [
       "foco",
-      "modelagem, avaliação de modelos e MLOps"
+      "ciência de dados e engenharia de machine learning"
     ],
     [
       "formação",
-      "Desenvolvimento de Sistemas"
+      "MBA em Data Science e Analytics (USP/Esalq)"
+    ],
+    [
+      "",
+      "Banco de Dados: Data Science, Big Data e BI (UniSociesc)"
+    ],
+    [
+      "",
+      "Programação de Computadores (SENAI/SC)"
     ],
     [
       "em curso",
-      "Pós-Tech em Machine Learning Engineering (FIAP)"
-    ],
-    [
-      "stack",
-      "Python, scikit-learn, PyTorch, Spark, MLflow"
-    ],
-    [
-      "destaque",
-      "oraculo-do-mestre (F1 = 0,957)"
+      "Pós-graduação em Machine Learning Engineering (FIAP)"
     ]
   ],
   "oraculo": [

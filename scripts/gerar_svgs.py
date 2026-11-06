@@ -1,7 +1,6 @@
 """Gera as imagens do perfil em assets/, nos temas claro e escuro.
 
-Os fatos ficam em dados/perfil.json. Da API pública do GitHub vêm a contagem de
-repositórios, a data da última atividade e o status do CI. Sem
+Os fatos ficam em dados/perfil.json. Da API pública do GitHub vem o status do CI. Sem
 mudança nos dados, os arquivos saem idênticos e o robô não cria commit.
 
 O texto vira curva vetorial, então o SVG fica igual em qualquer sistema.
@@ -17,7 +16,6 @@ import json
 import os
 import urllib.error
 import urllib.request
-from datetime import datetime
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -145,15 +143,13 @@ class Tela:
 
 
 def hero(fontes: dict, cores: dict, perfil: dict, vivos: dict) -> str:
-    linhas = perfil["info"] + [
-        ["projetos", f"{vivos['n_repos']} públicos, última atividade em {vivos['ultima']}"],
-    ]
-    alt = f"{perfil['nome']}. {perfil['titulo']}. " + ". ".join(f"{k}: {v}" for k, v in linhas)
+    linhas = perfil["info"]
+    alt = f"{perfil['nome']}. {perfil['titulo']}. " + ". ".join(f"{k}: {v}" if k else v for k, v in linhas)
     css = (
         "<style>.k{animation:k 1.2s steps(1) infinite}@keyframes k{50%{opacity:0}}"
         "@media (prefers-reduced-motion:reduce){.k{animation:none}}</style>"
     )
-    altura = 500
+    altura = 320 + 30 * len(linhas)
     t = Tela(fontes, cores, altura, alt, css)
     c = cores
 
@@ -179,7 +175,8 @@ def hero(fontes: dict, cores: dict, perfil: dict, vivos: dict) -> str:
     t.texto("mono", "<class 'CientistaDeDados'>", X_CELULA + 14, y, 15, "suave")
     for chave, valor in linhas:
         y += 30
-        t.texto("mono", chave, X_CELULA + 14, y, 15, "destaque")
+        if chave:
+            t.texto("mono", chave, X_CELULA + 14, y, 15, "destaque")
         t.texto("mono", valor, X_CELULA + 124, y, 15, "texto")
 
     # Próxima célula, à espera de quem chega.
@@ -276,13 +273,7 @@ def estado_ci(usuario: str, repo: str) -> str:
 
 def coletar(perfil: dict) -> dict:
     usuario = perfil["usuario"]
-    # Rota pública: repositório privado nunca entra nas contas nem nas imagens.
-    repos = api(f"users/{usuario}/repos?per_page=100&type=owner")
-    repos = [r for r in repos if not r["fork"] and r["name"].lower() != usuario.lower()]
-    ultima = max(datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00")) for r in repos)
     return {
-        "n_repos": len(repos),
-        "ultima": ultima.strftime("%d/%m/%Y"),
         "ci": {p["repo"]: estado_ci(usuario, p["repo"]) for p in perfil["projetos"]},
     }
 
