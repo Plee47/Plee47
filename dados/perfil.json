@@ -64,6 +64,14 @@
       "autoria": "solo"
     },
     {
+      "nome": "rota-economica",
+      "repo": "rota-economica",
+      "tarefa": "Prever o diesel",
+      "metrica": "MAE (R$/L)",
+      "valor": "0,146",
+      "autoria": "solo"
+    },
+    {
       "nome": "triagem-de-laudos",
       "repo": "TC3-Triagem-de-Laudos-Medicos-com-FastAPI-Docker-Airflow-Prometheus-Grafana-e-ONNX",
       "tarefa": "Classificar urgência",
