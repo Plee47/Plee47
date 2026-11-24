@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-escuro.svg?v=2">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-claro.svg?v=2">
-  <img src="assets/hero-claro.svg?v=2" width="100%" alt="Pedro Ostroski, ciência de dados e engenharia de machine learning. Formação: MBA em Data Science e Analytics (USP/Esalq); Banco de Dados: Data Science, Big Data e BI (UniSociesc); Programação de Computadores (SENAI/SC). Em curso: pós-graduação em Machine Learning Engineering (FIAP).">
+  <img src="assets/hero-claro.svg?v=2" width="100%" alt="Pedro Ostroski, ciência de dados. Formação: MBA em Data Science e Analytics (USP/Esalq); Banco de Dados: Data Science, Big Data e BI (UniSociesc); Programação de Computadores (SENAI/SC). Em curso: pós-graduação em Machine Learning Engineering (FIAP).">
 </picture>
 
 Comecei na programação e hoje foco em **ciência de dados**. Gosto de projetos que saem do notebook: modelos avaliados sem vazamento, testes, CI e deploy.
